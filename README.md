@@ -2,11 +2,19 @@
 
 伝統的な白黒の駒の代わりに猫の絵文字を使用した、クラシックなオセロ（リバーシ）ゲームの現代的な実装です。目を引く3Dビジュアルスタイルで表現されています。
 
+## 📊 ゲーム紹介スライド
+
+![スライド1：3Dキャットオセロ](https://app.devin.ai/attachments/acec93e7-9f9e-4688-bcd3-0b183546a8ef/file_home_ubuntu_074152.png)
+
+![スライド2：ゲームの特徴](https://app.devin.ai/attachments/acec93e7-9f9e-4688-bcd3-0b183546a8ef/file_home_ubuntu_074201.png)
+
+![スライド3：今すぐプレイ！](https://app.devin.ai/attachments/acec93e7-9f9e-4688-bcd3-0b183546a8ef/file_home_ubuntu_074209.png)
+
 ## 🎮 今すぐプレイ
 
 以下のURLからオンラインでプレイできます：
 - [GitHub Pages](https://ninja03.github.io/devin2/)
-- [Devin Apps デプロイメント](https://cat-emoji-game-3p2ogncv.devinapps.com)
+- [Devin Apps デプロイメント](https://cat-emoji-game-ld61orr0.devinapps.com)
 
 ## 📋 ゲームルール
 
@@ -31,6 +39,7 @@
 - 🏆 ゲーム終了の検出と勝者の発表
 - 🔄 いつでも再開できる新しいゲームボタン
 - 📱 様々な画面サイズに対応したレスポンシブデザイン
+- ✨ スムーズなアニメーション効果（駒の反転、ゲーム開始/終了など）
 
 ## 🛠️ 技術スタック
 
