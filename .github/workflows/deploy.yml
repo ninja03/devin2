@@ -29,8 +29,10 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Copy public files
-        run: cp -r public/* dist/
+      - name: Copy public files and ensure vite.svg is available
+        run: |
+          cp -r public/* dist/
+          cp public/vite.svg dist/vite.svg
       - name: Setup Pages
         uses: actions/configure-pages@v3
         with:
