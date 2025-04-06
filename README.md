@@ -1,77 +1,77 @@
-# 🐈‍⬛ 3D Cat Othello 🐈
+# 🐈‍⬛ 3D キャットオセロ 🐈
 
-A modern implementation of the classic Othello (Reversi) game with a twist - using cat emojis instead of traditional black and white discs, all presented in an eye-catching 3D visual style.
+伝統的な白黒の駒の代わりに猫の絵文字を使用した、クラシックなオセロ（リバーシ）ゲームの現代的な実装です。目を引く3Dビジュアルスタイルで表現されています。
 
-## 🎮 Play Now
+## 🎮 今すぐプレイ
 
-You can play the game online at:
+以下のURLからオンラインでプレイできます：
 - [GitHub Pages](https://ninja03.github.io/devin2/)
-- [Devin Apps Deployment](https://cat-emoji-game-3p2ogncv.devinapps.com)
+- [Devin Apps デプロイメント](https://cat-emoji-game-3p2ogncv.devinapps.com)
 
-## 📋 Game Rules
+## 📋 ゲームルール
 
-Othello (also known as Reversi) is a strategy board game played on an 8×8 board:
+オセロ（リバーシとしても知られる）は8×8のボードでプレイする戦略ボードゲームです：
 
-1. The game starts with four pieces in the center: two black cats (🐈‍⬛) and two white cats (🐈)
-2. Black always moves first
-3. Players take turns placing their pieces on the board
-4. A valid move must "sandwich" at least one of the opponent's pieces between the newly placed piece and another piece of the player's color
-5. All "sandwiched" pieces are flipped to the current player's color
-6. If a player cannot make a valid move, their turn is skipped
-7. The game ends when neither player can make a valid move
-8. The player with the most pieces on the board wins
+1. ゲームは中央に4つの駒から始まります：2つの黒猫（🐈‍⬛）と2つの白猫（🐈）
+2. 黒が常に先手です
+3. プレイヤーは交互にボード上に駒を置きます
+4. 有効な手は、新しく置いた駒と同じ色の別の駒の間に、少なくとも1つの相手の駒を「挟む」必要があります
+5. 「挟まれた」すべての駒は現在のプレイヤーの色に裏返されます
+6. プレイヤーが有効な手を打てない場合、そのターンはスキップされます
+7. どちらのプレイヤーも有効な手を打てなくなったらゲーム終了です
+8. ボード上に最も多くの駒を持つプレイヤーが勝利します
 
-## 🎯 Features
+## 🎯 特徴
 
-- 🎨 Beautiful 3D visual effects with shadows and perspective
-- 🐱 Cat emojis (🐈‍⬛ and 🐈) instead of traditional black and white discs
-- 🎲 Full implementation of Othello/Reversi rules
-- 🔄 Valid moves highlighted with green dots
-- 📊 Real-time score tracking
-- 🏆 Game over detection with winner announcement
-- 🔄 New game button to restart anytime
-- 📱 Responsive design for various screen sizes
+- 🎨 影と遠近感を持つ美しい3Dビジュアルエフェクト
+- 🐱 伝統的な白黒の駒の代わりに猫の絵文字（🐈‍⬛と🐈）を使用
+- 🎲 オセロ/リバーシのルールを完全に実装
+- 🔄 有効な手は緑の点で強調表示
+- 📊 リアルタイムのスコア追跡
+- 🏆 ゲーム終了の検出と勝者の発表
+- 🔄 いつでも再開できる新しいゲームボタン
+- 📱 様々な画面サイズに対応したレスポンシブデザイン
 
-## 🛠️ Technology Stack
+## 🛠️ 技術スタック
 
-- **React**: Frontend library for building the user interface
-- **TypeScript**: For type-safe code
-- **Tailwind CSS**: For styling and responsive design
-- **Vite**: Fast build tool and development server
-- **shadcn/ui**: UI component library
-- **Lucide Icons**: For beautiful, consistent icons
+- **React**: ユーザーインターフェースを構築するためのフロントエンドライブラリ
+- **TypeScript**: 型安全なコードのため
+- **Tailwind CSS**: スタイリングとレスポンシブデザインのため
+- **Vite**: 高速なビルドツールと開発サーバー
+- **shadcn/ui**: UIコンポーネントライブラリ
+- **Lucide Icons**: 美しく一貫性のあるアイコンのため
 
-## 🚀 Development
+## 🚀 開発
 
-### Prerequisites
+### 前提条件
 
-- Node.js (v18 or higher)
-- npm, yarn, or pnpm
+- Node.js（v18以上）
+- npm、yarn、またはpnpm
 
-### Setup
+### セットアップ
 
-1. Clone the repository:
+1. リポジトリをクローンします：
    ```bash
    git clone https://github.com/ninja03/devin2.git
    cd devin2
    ```
 
-2. Install dependencies:
+2. 依存関係をインストールします：
    ```bash
    npm install
    ```
 
-3. Start the development server:
+3. 開発サーバーを起動します：
    ```bash
    npm run dev
    ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+4. ブラウザを開いて `http://localhost:5173` にアクセスします
 
-### Building for Production
+### 本番用ビルド
 
 ```bash
 npm run build
 ```
 
-The built files will be in the `dist` directory.
+ビルドされたファイルは `dist` ディレクトリに格納されます。
