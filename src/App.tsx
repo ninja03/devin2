@@ -266,7 +266,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-900 to-purple-900 flex flex-col items-center justify-center p-4">
       <h1 className="text-4xl font-bold mb-6 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-        <span className="text-yellow-300">3D</span> Cat Othello
+        <span className="text-yellow-300">3D</span> キャットオセロ
       </h1>
       
       <div className="mb-6 flex gap-12">
@@ -290,7 +290,7 @@ function App() {
       <div className={`mt-6 bg-gray-800/70 p-4 rounded-lg backdrop-blur-sm shadow-lg ${gameOver ? 'animate-pulse-slow' : ''}`}>
         {!gameOver ? (
           <div className="flex items-center">
-            <span className="mr-3 text-white text-lg">Current player:</span>
+            <span className="mr-3 text-white text-lg">現在のプレイヤー:</span>
             <span className="text-3xl transform scale-110 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] animate-bounce-subtle">
               {currentPlayer === 'black' ? '🐈‍⬛' : '🐈'}
             </span>
@@ -298,8 +298,8 @@ function App() {
         ) : (
           <div className="text-2xl font-bold text-white text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] animate-winner-text">
             {winner === 'tie' 
-              ? "It's a tie!" 
-              : `${winner === 'black' ? '🐈‍⬛ Black' : '🐈 White'} wins!`}
+              ? "引き分けです！" 
+              : `${winner === 'black' ? '🐈‍⬛ 黒' : '🐈 白'}の勝ちです！`}
           </div>
         )}
       </div>
@@ -309,7 +309,7 @@ function App() {
         onClick={initializeGame}
       >
         <RefreshCw size={18} className={gameOver ? 'animate-spin-slow' : ''} />
-        New Game
+        新しいゲーム
       </Button>
     </div>
   )
