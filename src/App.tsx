@@ -271,7 +271,7 @@ function App() {
       
       <div className="mb-6 flex gap-12">
         <div className={`flex items-center bg-black/30 p-3 rounded-xl backdrop-blur-sm shadow-lg transform hover:scale-105 transition-transform ${gameOver && winner === 'black' ? 'animate-winner' : ''}`}>
-          <span className="text-3xl mr-3 drop-shadow-lg">🐈‍⬛</span>
+          <span className="text-3xl mr-3 drop-shadow-lg">🐈</span>‍⬛</span>
           <span className="font-bold text-2xl text-white">{scores.black}</span>
         </div>
         <div className={`flex items-center bg-white/30 p-3 rounded-xl backdrop-blur-sm shadow-lg transform hover:scale-105 transition-transform ${gameOver && winner === 'white' ? 'animate-winner' : ''}`}>
