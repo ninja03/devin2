@@ -25,10 +25,6 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Copy public files and ensure vite.svg is available
-        run: |
-          cp -r public/* dist/
-          cp public/vite.svg dist/vite.svg
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
