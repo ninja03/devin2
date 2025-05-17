@@ -15,6 +15,9 @@ const DIRECTIONS = [
   [1, -1],  [1, 0],  [1, 1]
 ];
 
+const AI_PLAYER: Player = 'white'
+const AI_THINK_DELAY = 500
+
 function App() {
   const [board, setBoard] = useState<Cell[][]>([]);
   const [currentPlayer, setCurrentPlayer] = useState<Player>('black');
@@ -28,6 +31,18 @@ function App() {
   }, []);
 
   const [gameStarting, setGameStarting] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (currentPlayer === AI_PLAYER && !gameOver) {
+      const move = chooseAIMove(board, AI_PLAYER)
+      if (move) {
+        const timer = setTimeout(() => {
+          makeMove(move.row, move.col)
+        }, AI_THINK_DELAY)
+        return () => clearTimeout(timer)
+      }
+    }
+  }, [board, currentPlayer, gameOver])
   
   const initializeGame = () => {
     setGameStarting(true);
@@ -206,6 +221,77 @@ function App() {
     
     return { black, white };
   };
+
+  const simulateMove = (
+    board: Cell[][],
+    row: number,
+    col: number,
+    player: Player,
+  ): Cell[][] => {
+    const newBoard = board.map((r) => [...r])
+    newBoard[row][col] = player
+
+    const opponent = player === 'black' ? 'white' : 'black'
+
+    for (const [dx, dy] of DIRECTIONS) {
+      let r = row + dx
+      let c = col + dy
+      const piecesToFlip: [number, number][] = []
+
+      while (
+        r >= 0 &&
+        r < BOARD_SIZE &&
+        c >= 0 &&
+        c < BOARD_SIZE &&
+        newBoard[r][c] === opponent
+      ) {
+        piecesToFlip.push([r, c])
+        r += dx
+        c += dy
+      }
+
+      if (
+        r >= 0 &&
+        r < BOARD_SIZE &&
+        c >= 0 &&
+        c < BOARD_SIZE &&
+        newBoard[r][c] === player
+      ) {
+        for (const [flipRow, flipCol] of piecesToFlip) {
+          newBoard[flipRow][flipCol] = player
+        }
+      }
+    }
+
+    return newBoard
+  }
+
+  const chooseAIMove = (
+    board: Cell[][],
+    player: Player,
+  ): { row: number; col: number } | null => {
+    const moves = getValidMoves(board, player)
+    let best: { row: number; col: number } | null = null
+    let bestScore = -Infinity
+
+    for (const key of Object.keys(moves)) {
+      const [r, c] = key.split(',').map(Number)
+      const next = simulateMove(board, r, c, player)
+      const { black, white } = countPieces(next)
+      const diff = player === 'black' ? black - white : white - black
+      const cornerBonus =
+        (r === 0 || r === BOARD_SIZE - 1) && (c === 0 || c === BOARD_SIZE - 1)
+          ? 10
+          : 0
+      const score = diff + cornerBonus
+      if (score > bestScore) {
+        bestScore = score
+        best = { row: r, col: c }
+      }
+    }
+
+    return best
+  }
 
   const renderCell = (row: number, col: number) => {
     const cell = board[row][col];
